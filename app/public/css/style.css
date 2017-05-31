@@ -12,3 +12,9 @@ body {
     border-radius: 50%;
     vertical-align: middle;
 }
+
+#error {
+    display: none;
+    color: red;
+    margin: 10px 0;
+}
