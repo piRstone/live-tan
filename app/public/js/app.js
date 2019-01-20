@@ -9,7 +9,7 @@ function updateDOM(data, index, elementId) {
 
 function call(success) {
     $.ajax({
-        url: '/horaires',
+        url: '/horaires/MDTH',
         method: 'GET',
         success: function(data) {
             updateDOM(data, 0, 'next');

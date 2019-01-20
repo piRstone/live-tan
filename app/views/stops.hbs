@@ -1,0 +1,10 @@
+<div id="main">
+    <h1>Arrêts</h1>
+    <ul>
+        {{#each stops}}
+        <li>
+            <a href="/horaires/{{codeLieu}}">{{libelle}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

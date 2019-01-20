@@ -1,10 +1,10 @@
 <div id="main">
-    <h1><i class="fa fa-bus"></i>&nbsp;Pétrels</h1>
-    <p>Direction Fac de droit</p>
+    <h1><i class="fa fa-train"></i>&nbsp;Prochains passages</h1>
+    <a href="/arrets" class="stations">Liste des stations</a>
     <br>
-    <p>Prochain passage : <span id="next">**</span> min</p>
-    <p>Le suivant dans : <span id="next2">**</span> min</p>
-    <p>Puis dans : <span id="next3">**</span> min</p>
-    <a id="link" href="#" onClick="call()">Refresh</a><div id="refresh"></div>
-    <p id="error">Une erreur est survenue. Veuillez recharger la page.</p>
+    <p class="live-label"><span></span> DIRECT</p>
+    {{#each times}}
+    <h3>Ligne {{ ligne.numLigne }}</h3>
+    <p><span class="terminus">Terminus</span> {{ terminus }}: {{ temps }}</p>
+    {{/each}}
 </div>
