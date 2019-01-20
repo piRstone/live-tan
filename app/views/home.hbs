@@ -2,9 +2,13 @@
     <h1><i class="fa fa-train"></i>&nbsp;Prochains passages</h1>
     <a href="/arrets" class="stations">Liste des stations</a>
     <br>
+    {{#if times.length}}
     <p class="live-label"><span></span> DIRECT</p>
     {{#each times}}
     <h3>Ligne {{ ligne.numLigne }}</h3>
     <p><span class="terminus">Terminus</span> {{ terminus }}: {{ temps }}</p>
     {{/each}}
+    {{else}}
+    <p>Choisissez une station dans la liste</p>
+    {{/if}}
 </div>
