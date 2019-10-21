@@ -6,6 +6,7 @@ var http = require('http');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
+require('dotenv').config();
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -13,7 +14,7 @@ var port = process.env.PORT || 3000;
 // Set handlebars as templating engine
 app.engine('hbs', exphbs({
     extname: 'hbs',
-    defaultLayout: 'main.hbs'
+    defaultLayout: __dirname + '/views/layouts/main.hbs'
 }));
 app.set('view engine', 'hbs');
 
@@ -21,10 +22,10 @@ app.set('view engine', 'hbs');
 app.disable('etag');
 
 app.use(logger('dev'));
-app.use(bodyParser.json({limit: "50mb"}));
-app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
 // Set /public as static content dir
-app.use('/', express.static(__dirname + "/public"));
+app.use('/', express.static(process.cwd() + '/public'));
 
 // Routes
 routes(app);
